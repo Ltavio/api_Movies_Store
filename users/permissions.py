@@ -11,3 +11,14 @@ class IsEmployeeOrReadOnly(permissions.BasePermission):
             return True
 
         return False
+
+
+class IsAuthenticateOrReadOnly(permissions.BasePermission):
+    def has_permission(self, request, view):
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        if request.user.is_authenticated:
+            return True
+
+        return False
