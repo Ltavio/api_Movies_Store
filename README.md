@@ -40,7 +40,7 @@ Nesse projeto foi desenvolvido uma aplicação para gerenciamento de usuários e
         </tr>
         <tr>
             <td>GET</td>
-            <td>users/<int:user_id>/</td>
+            <td>users/int:user_id/</td>
             <td>List perfil do usuário</td>
             <td>Somente autenticado</td>
         </tr>
@@ -64,19 +64,19 @@ Nesse projeto foi desenvolvido uma aplicação para gerenciamento de usuários e
         </tr>
         <tr>
             <td>GET</td>
-            <td>/api/movies/<int:movie_id>/</td>
+            <td>/api/movies/int:movie_id/</td>
             <td>List movie especifico</td>
             <td>Livre para acesso</td>
         </tr>
         <tr>
             <td>DELETE</td>
-            <td>api/movies/<int:movie_id>/</td>
+            <td>api/movies/int:movie_id/</td>
             <td>Deletar movie</td>
             <td>Somente usuários na categoria employee</td>
         </tr>
         <tr>
             <td>POST</td>
-            <td>api/movies/<int:movie_id>/orders/</td>
+            <td>api/movies/int:movie_id/orders/</td>
             <td>Comprar movie</td>
             <td>Somente autenticado</td>
         </tr>
