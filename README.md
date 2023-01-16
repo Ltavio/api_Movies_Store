@@ -1,74 +1,100 @@
-# M5 - Kenzie Buster
+# API MovieBuster
 
-## Instalação dos pacotes de teste
+## Descrição:
 
-- Verifique se os pacotes `pytest` e/ou `pytest-testdox` estão instalados globalmente em seu sistema:
-```shell
-pip list
+Nesse projeto foi desenvolvido uma aplicação para gerenciamento de usuários e filmes, além da compra dos filmes, incluindo autenticação e permissões de rotas que diferencia os tipos de usuários logados.
+
+## Tecnologias utilizadas:
+
+- python (ipython)
+- django
+- djangorestframework
+- djangorestframework-simplejwt
+- ipdb
+- black
+- jedi
+- pytest
+- pytest-django
+- pytest-testdox
+- PyJWT
+- sqlparse
+
+
+## Endpoints do serviço:
+
+<table>
+    <thead>
+        <tr>
+            <th>Método</th>
+            <th>Endpoint</th>
+            <th>Permissão</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>POST</td>
+            <td>api/users/</td>
+            <td>Livre para acesso</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>api/users/login/</td>
+            <td>Autenticar as credenciais de um usuário e retornar um token de acesso JWT.</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>api/movies/</td>
+            <td>Livre para acesso</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>api/movies/</td>
+            <td>Somente usuários na categoria employee</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/api/movies/<int:movie_id>/</td>
+            <td>Livre para acesso</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>api/movies/<int:movie_id>/</td>
+            <td>Somente usuários na categoria employee</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>api/movies/<int:movie_id>/orders/</td>
+            <td>Somente autenticado</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/properties</td>
+            <td>Criação de um imóvel</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/properties</td>
+            <td>Lista todos os imóveis</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>/schedules</td>
+            <td>Agenda uma visita a um imóvel</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>/schedules/properties/:id</td>
+            <td>lista todos os agendamentos de um imóvel</td>
+        </tr>
+    </tbody>
+</table>
+
+### Para inicializar a aplicação:
+````
+python manage.py runserver
+````
+
+- Rodando os testes:
 ```
-- Caso seja listado o `pytest` e/ou `pytest-testdox` e/ou `pytest-django` em seu ambiente global, utilize os seguintes comando para desinstalá-los globalmente:
-```shell
-pip uninstall pytest
-```
-
-```shell
-pip uninstall pytest-testdox
-```
-
-```shell
-pip uninstall pytest-django
-```
-
-A partir disso, prossiga com os passos:
-
-1. Crie seu ambiente virtual:
-```bash
-python -m venv venv
-```
-
-2. Ative seu venv:
-```bash
-# linux:
-source venv/bin/activate
-
-# windows:
-.\venv\Scripts\activate
-```
-
-3. Instale o pacote `pytest-testdox`:
-```shell
-pip install pytest-testdox pytest-django
-```
-
-5. Vá até o arquivo `pytest.ini` e modifique o nome do projeto `my_project_name.settings` para o nome do **seu_projeto**.settings (onde se encontra o settings.py)
-
-4. Agora é só rodar os testes no diretório principal do projeto:
-```shell
 pytest --testdox -vvs
-```
-
-
-
-## Rodando os testes de cada tarefa isoladamente
-
-Ao fim de cada tarefa será possível executar uma suite de testes direcionada àquela tarefa específica. Lembre-se de sempre estar com o **virtual enviroment (venv) ativado**.
-
-- Rodando testes da Tarefa 1:
-```python
-pytest --testdox -vvs tests/tarefas/t1/
-```
-
-- Rodando testes da Tarefa 2:
-```python
-pytest --testdox -vvs tests/tarefas/t2/
-```
-
-- Rodando testes da Tarefa 3:
-```python
-pytest --testdox -vvs tests/tarefas/t3/
-```
-
-- Rodando testes da Tarefa 4:
-```python
-pytest --testdox -vvs tests/tarefas/t4/
 ```
