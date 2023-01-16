@@ -64,7 +64,7 @@ Nesse projeto foi desenvolvido uma aplicação para gerenciamento de usuários e
         </tr>
         <tr>
             <td>GET</td>
-            <td>/api/movies/int:movie_id/</td>
+            <td>api/movies/int:movie_id/</td>
             <td>List movie especifico</td>
             <td>Livre para acesso</td>
         </tr>
