@@ -27,6 +27,7 @@ Nesse projeto foi desenvolvido uma aplicação para gerenciamento de usuários e
         <tr>
             <th>Método</th>
             <th>Endpoint</th>
+            <th>Objetivo</th>
             <th>Permissão</th>
         </tr>
     </thead>
@@ -34,57 +35,50 @@ Nesse projeto foi desenvolvido uma aplicação para gerenciamento de usuários e
         <tr>
             <td>POST</td>
             <td>api/users/</td>
+            <td>Criação de usuário</td>
             <td>Livre para acesso</td>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>users/<int:user_id>/</td>
+            <td>List perfil do usuário</td>
+            <td>Somente autenticado</td>
         </tr>
         <tr>
             <td>POST</td>
             <td>api/users/login/</td>
             <td>Autenticar as credenciais de um usuário e retornar um token de acesso JWT.</td>
+            <td>Livre para acesso</td>
         </tr>
         <tr>
             <td>GET</td>
             <td>api/movies/</td>
+            <td>List movies armazenados</td>
             <td>Livre para acesso</td>
         </tr>
         <tr>
             <td>POST</td>
             <td>api/movies/</td>
+            <td>Cadastrar movie</td>
             <td>Somente usuários na categoria employee</td>
         </tr>
         <tr>
             <td>GET</td>
             <td>/api/movies/<int:movie_id>/</td>
+            <td>List movie especifico</td>
             <td>Livre para acesso</td>
         </tr>
         <tr>
             <td>DELETE</td>
             <td>api/movies/<int:movie_id>/</td>
+            <td>Deletar movie</td>
             <td>Somente usuários na categoria employee</td>
         </tr>
         <tr>
             <td>POST</td>
             <td>api/movies/<int:movie_id>/orders/</td>
+            <td>Comprar movie</td>
             <td>Somente autenticado</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/properties</td>
-            <td>Criação de um imóvel</td>
-        </tr>
-        <tr>
-            <td>GET</td>
-            <td>/properties</td>
-            <td>Lista todos os imóveis</td>
-        </tr>
-        <tr>
-            <td>POST</td>
-            <td>/schedules</td>
-            <td>Agenda uma visita a um imóvel</td>
-        </tr>
-        <tr>
-            <td>GET</td>
-            <td>/schedules/properties/:id</td>
-            <td>lista todos os agendamentos de um imóvel</td>
         </tr>
     </tbody>
 </table>
